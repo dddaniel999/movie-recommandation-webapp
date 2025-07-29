@@ -1,0 +1,81 @@
+@startuml DiagramaUML
+
+skinparam packageStyle rectangle
+left to right direction
+
+' === COMPONENTE UI ===
+class "App.jsx" {
+  + handleSearch(title: string): void
+  + render(): JSX
+}
+
+class "MovieSearch.jsx" {
+  + onSubmit(title: string): void
+  + render(): JSX
+}
+
+class "MovieCard.jsx" {
+  + render(movie: Movie): JSX
+}
+
+class "CachedMovies.jsx" {
+  + render(): JSX
+  + onReloadClick(): void
+}
+
+' === LOGICĂ ===
+class "api.js" {
+  + fetchMovieData(title: string): Promise<Movie>
+}
+
+class "cache.js" {
+  + getFromCache(title: string): Movie?
+  + saveToCache(title: string, movie: Movie): void
+  + getAllCache(): object
+}
+
+' === MODEL ===
+class Movie {
+  - title: string
+  - year: string
+  - rating: string
+  - runtime: string
+  - plot: string
+  - posterUrl: string
+  - score: number
+}
+
+' === ENTRY POINT ===
+class "main.jsx" {
+  + render(<App />): void
+}
+
+' === CSS / STIL ===
+class "index.css" {
+  + importTailwind(): void
+}
+
+class "App.css" {
+  + themeStyles(): void
+}
+
+
+' === RELAȚII ===
+"main.jsx" --> "App.jsx"
+"main.jsx" --> "index.css"
+"App.jsx" --> "MovieSearch.jsx"
+"App.jsx" --> "MovieCard.jsx"
+"App.jsx" --> "CachedMovies.jsx"
+"App.jsx" --> "cache.js"
+"App.jsx" --> "api.js"
+"App.jsx" --> "App.css"
+"MovieSearch.jsx" --> "api.js"
+"api.js" --> Movie
+"api.js" --> "cache.js"
+"MovieCard.jsx" --> Movie
+"CachedMovies.jsx" --> "cache.js"
+"CachedMovies.jsx" --> Movie
+"CachedMovies.jsx" --> "App.jsx" : setMovieData()
+
+@enduml
+

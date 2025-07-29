@@ -1,0 +1,71 @@
+/* Fundal implicit */
+body {
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+}
+
+/* Fundaluri tematice pe genuri – toate pe bază închisă */
+body.genre-romance {
+  background: linear-gradient(to bottom right, #1f0a0f, #b8325c);
+}
+
+body.genre-horror {
+  background: linear-gradient(to bottom right, #0d0f0e, #22543d);
+}
+
+body.genre-action {
+  background: linear-gradient(to bottom right, #121212, #2c5364);
+}
+
+body.genre-comedy {
+  background: linear-gradient(to bottom right, #1a1a1a, #ffcc70);
+}
+
+/* Titlu animat */
+h1 {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+h1:hover {
+  transform: scale(1.05);
+  color: #facc15;
+}
+
+/* Hover pe elementele din listă */
+li {
+  transition: all 0.3s ease;
+}
+li:hover {
+  transform: scale(1.02);
+  background-color: #374151;
+}
+
+/* Cardul filmului */
+.movie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Efect de fade-in la afișare */
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInZoom 0.9s ease forwards;
+}

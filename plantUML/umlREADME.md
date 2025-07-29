@@ -1,0 +1,6 @@
+### CUM SĂ PREVIZUALIZEZI SCHIMBĂRILE SCHEMEI UML BAZATE PE COD ÎN TIMP REAL
+
+# / HOW TO PREVIEW PLANTUML CODE CHANGES IN REAL TIME ON SCHEMA
+
+1. „PlantUML Extension” (VSCode) + „PlantUML - Simple Viewer” (VSCode);
+2. Alt + D (Win) / Option + D (Mac).
