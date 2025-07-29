@@ -51,3 +51,5 @@ npm run dev
 A short presentation video is available on YouTube:
 [Watch the demo](https://youtu.be/Anb6L653J8Q)
 
+
+> Note: This application was developed and presented as a university project.
